@@ -1,0 +1,6 @@
+# ninja log v5
+1	458	7225560165664022	build.ninja	cdc056db2359b7d2
+4	175	7225480287550505	CMakeFiles/ListasDobles.dir/Node.cpp.obj	1ff34053cc3f875d
+11	563	7225480291432772	CMakeFiles/ListasDobles.dir/LinkedDouble.cpp.obj	cb28c1bf09848f9d
+3	565	7225480804908773	CMakeFiles/ListasDobles.dir/main.cpp.obj	88602cdfb8253d5a
+565	676	7225480805983857	ListasDobles.exe	805a81baa5789526

@@ -1,0 +1,3 @@
+D:/Second/Progra III/ListasDobles/cmake-build-debug/CMakeFiles/ListasDobles.dir
+D:/Second/Progra III/ListasDobles/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Second/Progra III/ListasDobles/cmake-build-debug/CMakeFiles/rebuild_cache.dir
