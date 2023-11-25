@@ -5,6 +5,11 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(ListasDobles main.cpp
         Node.h
-        Node.cpp
         LinkedDouble.h
-        LinkedDouble.cpp)
+        LinkedDouble.cpp
+        BackPack.cpp
+        Type.h
+        ListValidator.h
+        ListValidator.cpp
+        ListHandler.h
+        ListHandler.cpp)

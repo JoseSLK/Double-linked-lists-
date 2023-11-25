@@ -6,6 +6,7 @@
 #define LISTASDOBLES_LINKEDDOUBLE_H
 
 #include "Node.h"
+#include "Type.h"
 #include <vector>
 #include <string>
 
@@ -22,11 +23,15 @@ public:
 
     void addNodeLast(T info);
 
+    void addNodeAfterTo( Node<T> *node, T info);
+
+    void addNodeBeforeTo( Node<T> *node, T info);
+
     void addNodeSorted(T info);
 
     Node<T>* findNode(std::string );
 
-    T* findInfo(std::string );
+    T* findInfo(const std::string &name);
 
     T *deleteNode(Node<T>*);
 
@@ -36,7 +41,12 @@ public:
 
     T getLast();
 
+    int getSize();
+
     std::vector<T> getLinkedList(bool );
+
+    void modifyNodeContent(const std::string &id, const std::string &name, double price, Type type, const std::string &brand,
+                           const std::string &color, const std::string &description);
 
     virtual ~LinkedDouble();
 
@@ -46,7 +56,6 @@ private:
     Node<T> *last;
 
 };
-
 
 
 

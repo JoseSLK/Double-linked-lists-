@@ -1,6 +1,6 @@
 # ninja log v5
-1	458	7225560165664022	build.ninja	cdc056db2359b7d2
-4	175	7225480287550505	CMakeFiles/ListasDobles.dir/Node.cpp.obj	1ff34053cc3f875d
-11	563	7225480291432772	CMakeFiles/ListasDobles.dir/LinkedDouble.cpp.obj	cb28c1bf09848f9d
-3	565	7225480804908773	CMakeFiles/ListasDobles.dir/main.cpp.obj	88602cdfb8253d5a
-565	676	7225480805983857	ListasDobles.exe	805a81baa5789526
+5	406	7226335026259683	build.ninja	e606df2b5bc7a87a
+16	945	7226317650775076	CMakeFiles/ListasDobles.dir/LinkedDouble.cpp.obj	a7a7486dfc55879d
+27	1221	7226317653538118	CMakeFiles/ListasDobles.dir/main.cpp.obj	cc2c49b59dccf7c6
+1222	1432	7226317655614966	ListasDobles.exe	56e41fdcb8797e32
+9	1081	7226317652140717	CMakeFiles/ListasDobles.dir/BackPack.cpp.obj	7cf508d9946d9bd9
