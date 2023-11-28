@@ -24,6 +24,10 @@ public:
     BackPack(const std::string &id, const std::string &name, double price, Type type, const std::string &brand,
              const std::string &color, const std::string &description);
 
+    const std::string &getId() const;
+
+    void setId(const std::string &id);
+
     const std::string &getName() const;
 
     void setName(const std::string &name);

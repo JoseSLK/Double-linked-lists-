@@ -69,3 +69,11 @@ std::ostream &operator<<(std::ostream &os, const BackPack &pack) {
     return os;
 }
 
+const std::string &BackPack::getId() const {
+    return id;
+}
+
+void BackPack::setId(const std::string &id) {
+    BackPack::id = id;
+}
+

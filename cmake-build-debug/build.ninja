@@ -55,8 +55,8 @@ build CMakeFiles/ListasDobles.dir/main.cpp.obj: CXX_COMPILER__ListasDobles_unsca
   OBJECT_DIR = CMakeFiles\ListasDobles.dir
   OBJECT_FILE_DIR = CMakeFiles\ListasDobles.dir
 
-build CMakeFiles/ListasDobles.dir/LinkedDouble.cpp.obj: CXX_COMPILER__ListasDobles_unscanned_Debug D$:/Second/Progra$ III/DoubleLinkedLists/LinkedDouble.cpp || cmake_object_order_depends_target_ListasDobles
-  DEP_FILE = CMakeFiles\ListasDobles.dir\LinkedDouble.cpp.obj.d
+build CMakeFiles/ListasDobles.dir/LinkedListDouble.cpp.obj: CXX_COMPILER__ListasDobles_unscanned_Debug D$:/Second/Progra$ III/DoubleLinkedLists/LinkedListDouble.cpp || cmake_object_order_depends_target_ListasDobles
+  DEP_FILE = CMakeFiles\ListasDobles.dir\LinkedListDouble.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\ListasDobles.dir
   OBJECT_FILE_DIR = CMakeFiles\ListasDobles.dir
@@ -87,7 +87,7 @@ build CMakeFiles/ListasDobles.dir/ListHandler.cpp.obj: CXX_COMPILER__ListasDoble
 #############################################
 # Link the executable ListasDobles.exe
 
-build ListasDobles.exe: CXX_EXECUTABLE_LINKER__ListasDobles_Debug CMakeFiles/ListasDobles.dir/main.cpp.obj CMakeFiles/ListasDobles.dir/LinkedDouble.cpp.obj CMakeFiles/ListasDobles.dir/BackPack.cpp.obj CMakeFiles/ListasDobles.dir/ListValidator.cpp.obj CMakeFiles/ListasDobles.dir/ListHandler.cpp.obj
+build ListasDobles.exe: CXX_EXECUTABLE_LINKER__ListasDobles_Debug CMakeFiles/ListasDobles.dir/main.cpp.obj CMakeFiles/ListasDobles.dir/LinkedListDouble.cpp.obj CMakeFiles/ListasDobles.dir/BackPack.cpp.obj CMakeFiles/ListasDobles.dir/ListValidator.cpp.obj CMakeFiles/ListasDobles.dir/ListHandler.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ListasDobles.dir

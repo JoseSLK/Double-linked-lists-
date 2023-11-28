@@ -1,0 +1,14 @@
+//
+// Created by josel on 25/11/2023.
+//
+
+#ifndef LISTASDOBLES_ADDPOSITION_H
+#define LISTASDOBLES_ADDPOSITION_H
+
+
+enum AddPosition {
+    FIRST, LAST, AFTER, BEFORE, SORTED, INVALIDPOSITION
+};
+
+
+#endif //LISTASDOBLES_ADDPOSITION_H

@@ -7,11 +7,11 @@
 
 #include <cstdlib>
 
-template<class T> class LinkedDouble;
+template<class T> class LinkedListDouble;
 template<class T>
 
 class Node {
-    friend class LinkedDouble<T>;
+    friend class LinkedListDouble<T>;
 private:
     T info;
     Node<T> *next;

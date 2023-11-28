@@ -2,26 +2,26 @@
 // Created by josel on 23/11/2023.
 //
 
-#include "LinkedDouble.h"
+#include "LinkedListDouble.h"
 
 template<class T>
-LinkedDouble<T>::LinkedDouble() {
+LinkedListDouble<T>::LinkedListDouble() {
     head = NULL;
     last = NULL;
 }
 
 template<class T>
-T LinkedDouble<T>::getLast() {
+T LinkedListDouble<T>::getLast() {
     return last->info;
 }
 
 template<class T>
-T LinkedDouble<T>::getFirst() {
+T LinkedListDouble<T>::getFirst() {
     return head->info;
 }
 
 template<class T>
-T *LinkedDouble<T>::getObject(int position) {
+T *LinkedListDouble<T>::getObject(int position) {
     Node<T> *aux = head;
     for(int i = 1; (aux != NULL);i++){
         if(i == position){
@@ -33,7 +33,7 @@ T *LinkedDouble<T>::getObject(int position) {
 }
 
 template<class T>
-T *LinkedDouble<T>::deleteNode(Node<T> *auxNode) {
+T *LinkedListDouble<T>::deleteNode(Node<T> *auxNode) {
 
     if(auxNode != NULL){
 
@@ -53,7 +53,7 @@ T *LinkedDouble<T>::deleteNode(Node<T> *auxNode) {
 
 //Buscara el nodo que contenga esa informacion, pero cual informacion?, ya tengo busqueda por id, podria buscar la maleta por nombre
 template<class T>
-T *LinkedDouble<T>::findInfo(const std::string &name) {
+T *LinkedListDouble<T>::findInfo(const std::string &name) {
 
     if(name != ""){
 
@@ -70,7 +70,7 @@ T *LinkedDouble<T>::findInfo(const std::string &name) {
 }
 
 template<class T>
-Node<T> *LinkedDouble<T>::findNode(std::string id) {
+Node<T> *LinkedListDouble<T>::findNode(std::string id) {
     Node<T> *auxHead = head;
     Node<T> *auxLast = last;
     while(auxHead != NULL && auxLast != NULL){
@@ -89,7 +89,7 @@ Node<T> *LinkedDouble<T>::findNode(std::string id) {
 }
 
 template<class T>
-void LinkedDouble<T>::addNodeSorted(T info) {
+void LinkedListDouble<T>::addNodeSorted(T info) {
     Node<T> *node = new Node<T>(info);
 
     if(isEmpty()){
@@ -116,7 +116,7 @@ void LinkedDouble<T>::addNodeSorted(T info) {
 }
 
 template<class T>
-void LinkedDouble<T>::addNodeLast(T info) {
+void LinkedListDouble<T>::addNodeLast(T info) {
     Node<T> *newNode = new Node<T>(info);
     if(isEmpty()){
         head = newNode;
@@ -129,7 +129,7 @@ void LinkedDouble<T>::addNodeLast(T info) {
 }
 
 template<class T>
-void LinkedDouble<T>::addNodeFirst(T info) {
+void LinkedListDouble<T>::addNodeFirst(T info) {
 
     Node<T> *newNode = new Node<T>(info);
     if(isEmpty()){
@@ -144,12 +144,12 @@ void LinkedDouble<T>::addNodeFirst(T info) {
 }
 
 template<class T>
-bool LinkedDouble<T>::isEmpty() {
+bool LinkedListDouble<T>::isEmpty() {
     return head == NULL && last == NULL;
 }
 
 template<class T>
-std::vector<T> LinkedDouble<T>::getLinkedList(bool forward) {
+std::vector<T> LinkedListDouble<T>::getLinkedList(bool forward) {
     std::vector<T> out;
     Node<T> *aux = forward ? head: last;
     while (aux != NULL){
@@ -161,7 +161,7 @@ std::vector<T> LinkedDouble<T>::getLinkedList(bool forward) {
 }
 //Despues
 template<class T>
-void LinkedDouble<T>::addNodeAfterTo(Node<T> *node, T info) {
+void LinkedListDouble<T>::addNodeAfterTo(Node<T> *node, T info) {
 
     Node<T> *newNode = new Node<T>(info);
     Node<T> *aux = head;
@@ -182,7 +182,7 @@ void LinkedDouble<T>::addNodeAfterTo(Node<T> *node, T info) {
 }
 
 template<class T>
-void LinkedDouble<T>::addNodeBeforeTo(Node<T> *node, T info) {
+void LinkedListDouble<T>::addNodeBeforeTo(Node<T> *node, T info) {
 
     Node<T> *newNode = new Node<T>(info);
     Node<T> *aux = head;
@@ -203,7 +203,7 @@ void LinkedDouble<T>::addNodeBeforeTo(Node<T> *node, T info) {
 }
 
 template<class T>
-int LinkedDouble<T>::getSize() {
+int LinkedListDouble<T>::getSize() {
     Node<T> *aux = head;
     int size = 0;
     for (int i = 1; (aux != NULL) ; ++i) {
@@ -214,8 +214,8 @@ int LinkedDouble<T>::getSize() {
 }
 
 template<class T>
-void LinkedDouble<T>::modifyNodeContent(const std::string &id, const std::string &name, double price, Type type, const std::string &brand,
-                                        const std::string &color, const std::string &description) {
+void LinkedListDouble<T>::modifyNodeContent(const std::string &id, const std::string &name, double price, Type type, const std::string &brand,
+                                            const std::string &color, const std::string &description) {
     Node<T> *aux = findNode(id);
 
     if(aux != NULL){
@@ -229,7 +229,7 @@ void LinkedDouble<T>::modifyNodeContent(const std::string &id, const std::string
 
 }
 template<class T>
-LinkedDouble<T>::~LinkedDouble() {
+LinkedListDouble<T>::~LinkedListDouble() {
 
 }
-#include "LinkedDouble.h"
+#include "LinkedListDouble.h"

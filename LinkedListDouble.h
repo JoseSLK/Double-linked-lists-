@@ -2,8 +2,8 @@
 // Created by josel on 23/11/2023.
 //
 
-#ifndef LISTASDOBLES_LINKEDDOUBLE_H
-#define LISTASDOBLES_LINKEDDOUBLE_H
+#ifndef LISTASDOBLES_LINKEDLISTDOUBLE_H
+#define LISTASDOBLES_LINKEDLISTDOUBLE_H
 
 #include "Node.h"
 #include "Type.h"
@@ -12,10 +12,10 @@
 
 template <class T>
 
-class LinkedDouble {
+class LinkedListDouble {
 public:
 
-    LinkedDouble();
+    LinkedListDouble();
 
     bool isEmpty();
 
@@ -48,7 +48,7 @@ public:
     void modifyNodeContent(const std::string &id, const std::string &name, double price, Type type, const std::string &brand,
                            const std::string &color, const std::string &description);
 
-    virtual ~LinkedDouble();
+    virtual ~LinkedListDouble();
 
 private:
 
@@ -59,4 +59,4 @@ private:
 
 
 
-#endif //LISTASDOBLES_LINKEDDOUBLE_H
+#endif //LISTASDOBLES_LINKEDLISTDOUBLE_H

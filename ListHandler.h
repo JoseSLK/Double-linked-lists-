@@ -5,10 +5,25 @@
 #ifndef LISTASDOBLES_LISTHANDLER_H
 #define LISTASDOBLES_LISTHANDLER_H
 
+#include "ListValidator.h"
+#include "BackPack.h"
+#include "iostream"
 
 class ListHandler {
+private:
+    ListValidator *listValidator;
+public:
+    ListHandler() {
+        listValidator = new ListValidator();
+    }
 
+    void addItem();
+
+
+    virtual ~ListHandler(){};
 };
+
+
 
 
 #endif //LISTASDOBLES_LISTHANDLER_H

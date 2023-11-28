@@ -9,7 +9,8 @@
 enum Type {
     HANDBAG,
     SUITCASE,
-    FANNY_PACK
+    FANNY_PACK,
+    INVALIDTYPE
 };
 
 
