@@ -7,12 +7,13 @@
 
 #include <ostream>
 #include "Type.h"
+#include <iomanip>
 
 class BackPack {
 private:
     std::string id;
     std::string name;
-    double price;
+    std::string price;
     Type type;
     std::string brand;
     std::string color;
@@ -21,7 +22,7 @@ private:
 public:
     BackPack();
 
-    BackPack(const std::string &id, const std::string &name, double price, Type type, const std::string &brand,
+    BackPack(const std::string &id, const std::string &name, const std::string &price, Type type, const std::string &brand,
              const std::string &color, const std::string &description);
 
     const std::string &getId() const;
@@ -32,13 +33,13 @@ public:
 
     void setName(const std::string &name);
 
-    double getPrice() const;
-
-    void setPrice(double price);
-
     Type getType() const;
 
     void setType(Type type);
+
+    const std::string &getPrice() const;
+
+    void setPrice(const std::string &price);
 
     const std::string &getBrand() const;
 

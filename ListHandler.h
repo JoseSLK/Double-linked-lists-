@@ -17,7 +17,15 @@ public:
         listValidator = new ListValidator();
     }
 
+    void mainMenu();
+
     void addItem();
+
+    void deleteItem();
+
+    void editItem();
+
+    void readItems();
 
 
     virtual ~ListHandler(){};

@@ -45,7 +45,7 @@ public:
 
     std::vector<T> getLinkedList(bool );
 
-    void modifyNodeContent(const std::string &id, const std::string &name, double price, Type type, const std::string &brand,
+    void modifyNodeContent(const std::string &id, const std::string &name, const std::string &, Type type, const std::string &brand,
                            const std::string &color, const std::string &description);
 
     virtual ~LinkedListDouble();

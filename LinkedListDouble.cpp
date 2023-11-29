@@ -34,22 +34,35 @@ T *LinkedListDouble<T>::getObject(int position) {
 
 template<class T>
 T *LinkedListDouble<T>::deleteNode(Node<T> *auxNode) {
-
-    if(auxNode != NULL){
-
+    if (auxNode != NULL) {
         Node<T> *nextNode = auxNode->next;
-        Node<T> *firstNode = auxNode->previous;
+        Node<T> *previousNode = auxNode->previous;
 
-        delete(auxNode);
+        if (nextNode == NULL) {
+            last = previousNode;
+            if (last != NULL) {
+                last->next = nullptr;
+            } else {
+                head = nullptr;
+            }
+        } else {
+            nextNode->previous = previousNode;
+        }
 
-        firstNode->next = nextNode;
-        nextNode->previous= firstNode;
+        if (previousNode == NULL) {
+            head = nextNode;
+        } else {
+            previousNode->next = nextNode;
+        }
 
-        return &(auxNode->info);
+        T *deletedContent = &(auxNode->info);
+        delete auxNode;
 
+        return NULL;
     }
-    return NULL;
+    return nullptr;
 }
+
 
 //Buscara el nodo que contenga esa informacion, pero cual informacion?, ya tengo busqueda por id, podria buscar la maleta por nombre
 template<class T>
@@ -214,7 +227,7 @@ int LinkedListDouble<T>::getSize() {
 }
 
 template<class T>
-void LinkedListDouble<T>::modifyNodeContent(const std::string &id, const std::string &name, double price, Type type, const std::string &brand,
+void LinkedListDouble<T>::modifyNodeContent(const std::string &id, const std::string &name, const std::string &price, Type type, const std::string &brand,
                                             const std::string &color, const std::string &description) {
     Node<T> *aux = findNode(id);
 

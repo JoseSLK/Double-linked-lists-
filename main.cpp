@@ -5,7 +5,6 @@ using namespace std;
 
 int main() {
     auto handler = new ListHandler();
-    handler->addItem();
-
+    handler->mainMenu();
     return 0;
 }

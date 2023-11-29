@@ -22,12 +22,23 @@ public:
 
     Type verifyType(const int &type);
 
-    bool addNewProduct(const AddPosition &possition, const std::string &id, const std::string &name, const double &price, const Type &type, const std::string &brand,
+    bool addNewProduct(const AddPosition &possition, const std::string &id, const std::string &name, const std::string &price, const Type &type, const std::string &brand,
                        const std::string &color, const std::string &description);
+
+    bool addNewProduct(const AddPosition &possition, const std::string &id, const std::string &name,
+                  const std::string &price, const Type &type, const std::string &brand,
+                  const std::string &color, const std::string &description, const std::string &idPosition);
+
+    std::vector<BackPack> readItems(bool forward);
+
+    bool editItem(const std::string &id, const std::string &name, const std::string &, Type type, const std::string &brand,
+                  const std::string &color, const std::string &description);
 
     bool isDigit(const std::string &id);
 
     bool checkStringContent(const std::string &str);
+
+    bool deleteProduct(const std::string &id);
 
     virtual ~ListValidator();
 

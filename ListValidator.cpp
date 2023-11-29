@@ -6,16 +6,27 @@
 
 
 ListValidator::ListValidator(){
-    linkedList = new LinkedListDouble<BackPack>();};
+    linkedList = new LinkedListDouble<BackPack>();
+    linkedList->addNodeFirst(BackPack("123", "hjkasd", "hduisod", HANDBAG, ",asf", "jiofsaf", "hjfhsaduif"));
+    linkedList->addNodeFirst(BackPack("1234", "hjkasd", "hduisod", HANDBAG, ",asf", "jiofsaf", "hjfhsaduif"));
+    linkedList->addNodeFirst(BackPack("12345", "hjkasd", "hduisod", HANDBAG, ",asf", "jiofsaf", "hjfhsaduif"));
+    linkedList->addNodeFirst(BackPack("123456", "hjkasd", "hduisod", HANDBAG, ",asf", "jiofsaf", "hjfhsaduif"));
+}
 
 bool ListValidator::isDigit(const std::string &id) {
     try {
-        return std::stod(id) == 0;
+        size_t pos;
+
+        std::stod(id, &pos);
+
+        return pos == id.length();
+
     }catch (const std::invalid_argument& ex){
         return false;
     } catch (const std::out_of_range& ex){
         return false;
     }
+    return true;
 }
 
 
@@ -71,7 +82,7 @@ AddPosition ListValidator::verifyPosition(const int &position) {
 
 
 bool ListValidator::addNewProduct(const AddPosition &possition, const std::string &id, const std::string &name,
-                                     const double &price, const Type &type, const std::string &brand,
+                                     const std::string &price, const Type &type, const std::string &brand,
                                      const std::string &color, const std::string &description) {
     switch (possition) {
         case FIRST:
@@ -94,7 +105,46 @@ bool ListValidator::addNewProduct(const AddPosition &possition, const std::strin
     return false;
 }
 
+bool ListValidator::addNewProduct(const AddPosition &possition, const std::string &id, const std::string &name,
+                                  const std::string &price, const Type &type, const std::string &brand,
+                                  const std::string &color, const std::string &description, const std::string &idPosition) {
+    switch (possition) {
+        case AFTER:
+            linkedList->addNodeAfterTo(linkedList->findNode(idPosition), BackPack(id, name, price, type, brand, color, description));
+            break;
+        case BEFORE:
+            linkedList->addNodeBeforeTo(linkedList->findNode(idPosition), BackPack(id, name, price, type, brand, color, description));
+            break;
+    }
+
+    return false;
+}
+
+
+bool ListValidator::deleteProduct(const std::string &id) {
+    Node<BackPack> *deleteBackPack = linkedList->findNode(id);
+    if(linkedList->deleteNode(deleteBackPack) == NULL){
+     return true;
+    }
+    return false;
+}
+
+std::vector<BackPack> ListValidator::readItems(bool forward) {
+    return linkedList->getLinkedList(forward);
+}
+
+bool ListValidator::editItem(const std::string &id, const std::string &name, const std::string &price, Type type,
+                             const std::string &brand, const std::string &color, const std::string &description) {
+    linkedList->modifyNodeContent(id, name, price, type, brand, color, description);
+    return true;
+}
+
 
 ListValidator::~ListValidator() {
 
 }
+
+
+
+
+
