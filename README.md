@@ -5,5 +5,5 @@ Submitted to engineer Jairo Riaño
 
 UPTC💛🖤
 
-## Class diagram
+## UML Diagram
 ![Texto Alternativo](Main.jpg)
