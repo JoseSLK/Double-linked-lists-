@@ -13,4 +13,5 @@ add_executable(ListasDobles main.cpp
         ListValidator.cpp
         ListHandler.h
         ListHandler.cpp
-        AddPosition.h)
+        AddPosition.h
+        MessageException.h)

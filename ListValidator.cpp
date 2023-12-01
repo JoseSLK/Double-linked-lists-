@@ -7,10 +7,12 @@
 
 ListValidator::ListValidator(){
     linkedList = new LinkedListDouble<BackPack>();
-    linkedList->addNodeFirst(BackPack("123", "hjkasd", "hduisod", HANDBAG, ",asf", "jiofsaf", "hjfhsaduif"));
-    linkedList->addNodeFirst(BackPack("1234", "hjkasd", "hduisod", HANDBAG, ",asf", "jiofsaf", "hjfhsaduif"));
-    linkedList->addNodeFirst(BackPack("12345", "hjkasd", "hduisod", HANDBAG, ",asf", "jiofsaf", "hjfhsaduif"));
-    linkedList->addNodeFirst(BackPack("123456", "hjkasd", "hduisod", HANDBAG, ",asf", "jiofsaf", "hjfhsaduif"));
+    linkedList->addNodeFirst(BackPack("1", "Backpack A", "49.99", HANDBAG, "Brand X", "Blue", "Spacious backpack for daily use."));
+    linkedList->addNodeFirst(BackPack("2", "Traveler's Bag", "79.99", HANDBAG, "Adventure Co.", "Black", "Durable bag for travelers."));
+    linkedList->addNodeFirst(BackPack("3", "School Backpack", "29.99", HANDBAG, "Student Gear", "Red", "Ideal for carrying books and school supplies."));
+    linkedList->addNodeFirst(BackPack("4", "Tech Backpack", "99.99", HANDBAG, "Gadget Store", "Gray", "Designed to carry laptops and tech gadgets."));
+    linkedList->addNodeFirst(BackPack("5", "Fashion Backpack", "59.99", HANDBAG, "Trendy Styles", "Pink", "Stylish backpack for fashion enthusiasts."));
+
 }
 
 bool ListValidator::isDigit(const std::string &id) {
@@ -91,12 +93,6 @@ bool ListValidator::addNewProduct(const AddPosition &possition, const std::strin
         case LAST:
             linkedList->addNodeLast(BackPack(id, name, price, type, brand, color, description));
             break;
-        case AFTER:
-            //linkedList->addNodeAfterTo(BackPack(id, name, price, type, brand, color, description));
-            break;
-        case BEFORE:
-           // linkedList->addNodeBeforeTo(BackPack(id, name, price, type, brand, color, description));
-            break;
         case SORTED:
             linkedList->addNodeSorted(BackPack(id, name, price, type, brand, color, description));
             break;
@@ -129,7 +125,8 @@ bool ListValidator::deleteProduct(const std::string &id) {
     return false;
 }
 
-std::vector<BackPack> ListValidator::readItems(bool forward) {
+std::vector<BackPack> ListValidator::readItems(const bool &forward) {
+
     return linkedList->getLinkedList(forward);
 }
 

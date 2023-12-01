@@ -43,7 +43,7 @@ public:
 
     int getSize();
 
-    std::vector<T> getLinkedList(bool );
+    std::vector<T> getLinkedList(const bool &forward );
 
     void modifyNodeContent(const std::string &id, const std::string &name, const std::string &, Type type, const std::string &brand,
                            const std::string &color, const std::string &description);

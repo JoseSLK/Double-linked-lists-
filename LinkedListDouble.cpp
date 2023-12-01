@@ -105,28 +105,36 @@ template<class T>
 void LinkedListDouble<T>::addNodeSorted(T info) {
     Node<T> *node = new Node<T>(info);
 
-    if(isEmpty()){
+    if (isEmpty()) {
         head = node;
         last = node;
+    } else {
+        Node<T> *auxHead = head;
+        Node<T> *aux = nullptr;
+
+        while (auxHead != nullptr && node->info.getId().compare(auxHead->info.getId()) > 0) {
+            aux = auxHead;
+            auxHead = auxHead->next;
+        }
+
+        if (aux == nullptr) {
+            node->next = head;
+            head->previous = node;
+            head = node;
+        } else {
+            aux->next = node;
+            node->previous = aux;
+
+            if (auxHead == nullptr) {
+                last = node;
+            } else {
+                node->next = auxHead;
+                auxHead->previous = node;
+            }
+        }
     }
-
-    Node<T> *auxHead = head;
-    Node<T> *aux = NULL;
-
-    while(node->info.getId().compare(auxHead->info.getId()) > 0 && auxHead != NULL ){
-        aux = auxHead;
-        auxHead = auxHead->next;
-    }
-
-    if(aux == NULL){
-        head = node;
-        last = node;
-    }else{
-        aux->next = node;
-    }
-
-    node->next = auxHead;
 }
+
 
 template<class T>
 void LinkedListDouble<T>::addNodeLast(T info) {
@@ -162,58 +170,84 @@ bool LinkedListDouble<T>::isEmpty() {
 }
 
 template<class T>
-std::vector<T> LinkedListDouble<T>::getLinkedList(bool forward) {
+std::vector<T> LinkedListDouble<T>::getLinkedList(const bool &forward) {
     std::vector<T> out;
-    Node<T> *aux = forward ? head: last;
-    while (aux != NULL){
+    Node<T> *aux;
+
+    if (forward) {
+        aux = head;
+    } else {
+        aux = last;
+    }
+
+    while (aux != NULL) {
         out.push_back(aux->info);
-        aux = forward ? aux->next : aux->previous;
+
+        if (forward) {
+            aux = aux->next;
+        } else {
+            aux = aux->previous;
+        }
     }
 
     return out;
 }
+
 //Despues
 template<class T>
 void LinkedListDouble<T>::addNodeAfterTo(Node<T> *node, T info) {
-
     Node<T> *newNode = new Node<T>(info);
+
+    if (isEmpty()) {
+        head = newNode;
+        last = newNode;
+        return;
+    }
+
     Node<T> *aux = head;
 
-    while(head != NULL){
-        if(aux->next == NULL){
+    while (aux != NULL) {
+        if (aux->next == NULL) {
             aux->next = newNode;
+            newNode->previous = aux;
+            last = newNode;
             return;
-        }else if(aux == node){
+        } else if (aux == node) {
             newNode->next = aux->next;
+            newNode->previous = aux;
+            aux->next->previous = newNode;
             aux->next = newNode;
             return;
         }
         aux = aux->next;
     }
-
-
 }
+
 
 template<class T>
 void LinkedListDouble<T>::addNodeBeforeTo(Node<T> *node, T info) {
-
     Node<T> *newNode = new Node<T>(info);
     Node<T> *aux = head;
 
-    while (head != NULL){
-        if(aux == node){
+    while (aux != NULL) {
+        if (aux == node) {
             head = newNode;
             newNode->next = aux;
             return;
-        }else if(aux->next == node){
+        } else if (aux->next == node) {
             Node<T> *nextC = aux->next;
             aux->next = newNode;
+            newNode->previous = aux;
             newNode->next = nextC;
+            if (nextC != NULL) {
+                nextC->previous = newNode;
+            }
             return;
         }
         aux = aux->next;
     }
 }
+
 
 template<class T>
 int LinkedListDouble<T>::getSize() {

@@ -8,6 +8,7 @@
 #include "ListValidator.h"
 #include "BackPack.h"
 #include "iostream"
+#include "MessageException.h"
 
 class ListHandler {
 private:

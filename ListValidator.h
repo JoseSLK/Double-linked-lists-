@@ -29,7 +29,7 @@ public:
                   const std::string &price, const Type &type, const std::string &brand,
                   const std::string &color, const std::string &description, const std::string &idPosition);
 
-    std::vector<BackPack> readItems(bool forward);
+    std::vector<BackPack> readItems(const bool &forward);
 
     bool editItem(const std::string &id, const std::string &name, const std::string &, Type type, const std::string &brand,
                   const std::string &color, const std::string &description);
