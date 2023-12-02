@@ -128,12 +128,18 @@ void ListHandler::addItem() {
         "1-Primero\n2-Ultimo\n3-Despues de un producto en especifico\n4-Antes de un producto en especifico\n5-Ordenado por id\n"<<endl;
 
     while (!positionAux && possitionEnum == INVALIDPOSITION) {
+        int positionValue;
+
         cout << "Digita una opcion valida: ";
         getline(cin, position);
-        positionAux = listValidator->isDigit(position);
+        if(listValidator->isDigit(position)){
+            positionValue = std::stoi(position);
+            if(positionValue <=5 && positionValue >=1){
+                positionAux = true;
+            }
+        }
 
-        if (positionAux) {
-            int positionValue = std::stoi(position);
+        if ( positionAux ) {
             possitionEnum = listValidator->verifyPosition(positionValue);
 
             if (possitionEnum == AFTER || possitionEnum == BEFORE) {
